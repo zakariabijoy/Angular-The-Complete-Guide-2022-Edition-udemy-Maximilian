@@ -19,3 +19,6 @@ person = {
     age: 32
 };
 var people;
+// Type inference --------------------------
+var course = 'Angular';
+//course = 1232   // error  cause type inference 

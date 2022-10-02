@@ -37,3 +37,8 @@ let people: {
     name:string;
     age: number;
 }[];
+
+
+// Type inference --------------------------
+let course = 'Angular';
+//course = 1232   // error  cause type inference 

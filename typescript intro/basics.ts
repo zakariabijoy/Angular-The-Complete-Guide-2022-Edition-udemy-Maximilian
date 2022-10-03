@@ -117,3 +117,40 @@ student.enroll('React');
 
 //student.courses  // can't access cause  courses is private
 student.listCourses(); // Angular, React
+
+
+//interfaces,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+interface Human{
+    firstName: string;
+    age: number;
+
+    great():void;
+
+    bye: () => void;
+}
+
+let max : Human;
+
+max ={
+    firstName: 'Max',
+    age: 32,
+    great(){
+        console.log("hello there");
+    },
+    bye(){
+        console.log('bye, take care');
+    }
+}
+
+class Instructor implements Human{
+    firstName: string;
+    age: number;
+    great(): void {
+        console.log("hello students");
+    }
+    bye():void{
+        console.log("bye students");
+    }
+    
+}

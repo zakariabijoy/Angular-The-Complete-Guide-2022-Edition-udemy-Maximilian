@@ -84,3 +84,25 @@ var student = new Student('Max', 'strak', 32, ['Angular']);
 student.enroll('React');
 //student.courses  // can't access cause  courses is private
 student.listCourses(); // Angular, React
+var max;
+max = {
+    firstName: 'Max',
+    age: 32,
+    great: function () {
+        console.log("hello there");
+    },
+    bye: function () {
+        console.log('bye, take care');
+    }
+};
+var Instructor = /** @class */ (function () {
+    function Instructor() {
+    }
+    Instructor.prototype.great = function () {
+        console.log("hello students");
+    };
+    Instructor.prototype.bye = function () {
+        console.log("bye students");
+    };
+    return Instructor;
+}());

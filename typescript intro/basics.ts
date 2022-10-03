@@ -16,7 +16,7 @@ let isTrue:boolean = true;
 // Note: null & undefined  also premitive type
 
 
-// more complex type--------------
+// more complex type------------------------------------------------------
 
 // array----
 let hobbies: string[];
@@ -39,13 +39,29 @@ let people: {
 }[];
 
 
-// Type inference --------------------------
+// Type inference -----------
 let course = 'Angular';
 //course = 1232   // error  cause type inference 
 
-// union tyoe
+// union tyoe--------------
 
 let course1: string |number ="React";
 course1 = 1234;
 
 let name1 : string | string[];
+
+// type alias
+
+type Car = {
+    name: string;
+    model: string;
+    modelYear: number;
+}
+
+let bmw:Car = {
+    model:'123',
+    name: 'bmw12',
+    modelYear: 2022
+}
+
+let cars : Car[];

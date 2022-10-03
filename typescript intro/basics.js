@@ -8,7 +8,7 @@ age = 12;
 var userName = "bijoy";
 var isTrue = true;
 // Note: null & undefined  also premitive type
-// more complex type--------------
+// more complex type------------------------------------------------------
 // array----
 var hobbies;
 hobbies = ['Sports', 'Çooking'];
@@ -19,10 +19,16 @@ person = {
     age: 32
 };
 var people;
-// Type inference --------------------------
+// Type inference -----------
 var course = 'Angular';
 //course = 1232   // error  cause type inference 
-// union tyoe
+// union tyoe--------------
 var course1 = "React";
 course1 = 1234;
 var name1;
+var bmw = {
+    model: '123',
+    name: 'bmw12',
+    modelYear: 2022
+};
+var cars;

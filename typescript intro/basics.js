@@ -1,38 +1,46 @@
-"use strict";
 //data types-------------------------------------------------------------------
 //primitive types: number, string, boolean
 //more complex types: array, object
 //function types, parameters
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 //primitives---------------
-let age = 25;
+var age = 25;
 age = 12;
-let userName = "bijoy";
-let isTrue = true;
+var userName = "bijoy";
+var isTrue = true;
 // Note: null & undefined  also premitive type
 // more complex type------------------------------------------------------
 // array----
-let hobbies;
+var hobbies;
 hobbies = ['Sports', 'Çooking'];
 // object---
-let person;
+var person;
 person = {
     name: 'Max',
     age: 32
 };
-let people;
+var people;
 // Type inference -----------
-let course = 'Angular';
+var course = 'Angular';
 //course = 1232   // error  cause type inference 
 // union tyoe--------------
-let course1 = "React";
+var course1 = "React";
 course1 = 1234;
-let name1;
-let bmw = {
+var name1;
+var bmw = {
     model: '123',
     name: 'bmw12',
     modelYear: 2022
 };
-let cars;
+var cars;
 //function & types ----------------------------------------------------
 function add(a, b) {
     return a + b;
@@ -42,19 +50,19 @@ function printOutput(value) {
 }
 //Generics ------------------------------
 function insertAtbeginning(array, value) {
-    const newArray = [value, ...array];
+    var newArray = __spreadArray([value], array, true);
     return newArray;
 }
-const demoArray = [1, 2, 3];
-const updatedArray = insertAtbeginning(demoArray, -1);
-const stringArray = insertAtbeginning(['a', 'b', 'c'], 'd');
+var demoArray = [1, 2, 3];
+var updatedArray = insertAtbeginning(demoArray, -1);
+var stringArray = insertAtbeginning(['a', 'b', 'c'], 'd');
 // classes & typescript................................................
-class Student {
+var Student = /** @class */ (function () {
     // firstName: string;
     // lastName: string;
     // age: number;
     // private courses: string[];
-    constructor(firstName, lastName, age, courses) {
+    function Student(firstName, lastName, age, courses) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -64,37 +72,53 @@ class Student {
         // this.age = age;
         // this.courses = this.courses;
     }
-    enroll(courseName) {
+    Student.prototype.enroll = function (courseName) {
         this.courses.push(courseName);
-    }
-    listCourses() {
+    };
+    Student.prototype.listCourses = function () {
         return this.courses.slice();
-    }
-}
-const student = new Student('Max', 'strak', 32, ['Angular']);
+    };
+    return Student;
+}());
+var student = new Student('Max', 'strak', 32, ['Angular']);
 student.enroll('React');
 //student.courses  // can't access cause  courses is private
 student.listCourses(); // Angular, React
-let max;
+var max;
 max = {
     firstName: 'Max',
     age: 32,
-    great() {
+    great: function () {
         console.log("hello there");
     },
-    bye() {
+    bye: function () {
         console.log('bye, take care');
     }
 };
-class Instructor {
-    constructor(firstName, age) {
+var Instructor = /** @class */ (function () {
+    function Instructor(firstName, age) {
         this.firstName = firstName;
         this.age = age;
     }
-    great() {
+    Instructor.prototype.great = function () {
         console.log("hello students");
-    }
-    bye() {
+    };
+    Instructor.prototype.bye = function () {
         console.log("bye students");
-    }
-}
+    };
+    return Instructor;
+}());
+// Enums ------------------------------------------
+var Rtype;
+(function (Rtype) {
+    Rtype[Rtype["Success"] = 0] = "Success";
+    Rtype[Rtype["Failure"] = 1] = "Failure";
+    Rtype[Rtype["Unathenticated"] = 2] = "Unathenticated";
+    Rtype[Rtype["Forbidden"] = 3] = "Forbidden";
+})(Rtype || (Rtype = {}));
+var response1 = {
+    status: 200,
+    type: Rtype.Success,
+    data: 'test'
+};
+console.log(response1);

@@ -160,3 +160,22 @@ class Instructor implements Human{
     }
     
 }
+
+
+// Enums ------------------------------------------
+
+enum Rtype {Success, Failure, Unathenticated, Forbidden}
+
+interface APIResponse<T>{
+    status: number;
+    type: Rtype;
+    data: T;
+}
+
+const response1: APIResponse<string> = {
+    status: 200,
+    type: Rtype.Success,
+    data: 'test'
+}
+
+console.log(response1); // {data: "test",status: 200, type: 0}

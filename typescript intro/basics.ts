@@ -42,3 +42,10 @@ let people: {
 // Type inference --------------------------
 let course = 'Angular';
 //course = 1232   // error  cause type inference 
+
+// union tyoe
+
+let course1: string |number ="React";
+course1 = 1234;
+
+let name1 : string | string[];

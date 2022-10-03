@@ -22,3 +22,7 @@ var people;
 // Type inference --------------------------
 var course = 'Angular';
 //course = 1232   // error  cause type inference 
+// union tyoe
+var course1 = "React";
+course1 = 1234;
+var name1;

@@ -56,3 +56,31 @@ function insertAtbeginning(array, value) {
 var demoArray = [1, 2, 3];
 var updatedArray = insertAtbeginning(demoArray, -1);
 var stringArray = insertAtbeginning(['a', 'b', 'c'], 'd');
+// classes & typescript................................................
+var Student = /** @class */ (function () {
+    // firstName: string;
+    // lastName: string;
+    // age: number;
+    // private courses: string[];
+    function Student(firstName, lastName, age, courses) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.courses = courses;
+        // this.firstName = first;
+        // this.lastName = last;
+        // this.age = age;
+        // this.courses = this.courses;
+    }
+    Student.prototype.enroll = function (courseName) {
+        this.courses.push(courseName);
+    };
+    Student.prototype.listCourses = function () {
+        return this.courses.slice();
+    };
+    return Student;
+}());
+var student = new Student('Max', 'strak', 32, ['Angular']);
+student.enroll('React');
+//student.courses  // can't access cause  courses is private
+student.listCourses(); // Angular, React

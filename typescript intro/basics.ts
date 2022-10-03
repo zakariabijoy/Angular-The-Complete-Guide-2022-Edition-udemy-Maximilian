@@ -87,3 +87,33 @@ const demoArray = [1,2,3];
 
 const updatedArray = insertAtbeginning(demoArray,-1);
 const stringArray = insertAtbeginning(['a','b','c'],'d');
+
+// classes & typescript................................................
+
+class Student{
+    // firstName: string;
+    // lastName: string;
+    // age: number;
+    // private courses: string[];
+
+    constructor(public firstName:string, public lastName:string, public age: number, private courses:string[]) {
+        // this.firstName = first;
+        // this.lastName = last;
+        // this.age = age;
+        // this.courses = this.courses;
+    }
+
+    enroll(courseName: string){
+        this.courses.push(courseName);
+    }
+
+    listCourses(){
+        return this.courses.slice();
+    }
+}
+
+const student = new Student('Max', 'strak', 32, ['Angular']);
+student.enroll('React');
+
+//student.courses  // can't access cause  courses is private
+student.listCourses(); // Angular, React

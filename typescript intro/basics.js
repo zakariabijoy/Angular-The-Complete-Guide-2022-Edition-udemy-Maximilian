@@ -121,4 +121,7 @@ var response1 = {
     type: Rtype.Success,
     data: 'test'
 };
-console.log(response1);
+console.log(response1); // {data: "test",status: 200, type: 0}
+// Tuples -----------------------------------------------
+var a = [3, 'hello', { p: 3 }];
+var b = [4, 'world', { t: 1 }]; // tuples

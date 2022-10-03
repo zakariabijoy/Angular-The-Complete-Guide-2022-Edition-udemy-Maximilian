@@ -179,3 +179,8 @@ const response1: APIResponse<string> = {
 }
 
 console.log(response1); // {data: "test",status: 200, type: 0}
+
+// Tuples -----------------------------------------------
+
+let a = [3,'hello', {p:3}];
+let b:[number, string, object] = [4,'world',{t:1}];  // tuples

@@ -184,3 +184,17 @@ console.log(response1); // {data: "test",status: 200, type: 0}
 
 let a = [3,'hello', {p:3}];
 let b:[number, string, object] = [4,'world',{t:1}];  // tuples
+
+//Function signature ----------------------------------------
+
+let userDetails : (id: number | string, userInfo:{
+name:string,
+age:number
+}) => void;
+
+userDetails = (id: number | string, userInfo:{
+    name:string,
+    age:number
+    }) => console.log(userInfo);
+
+console.log(userDetails(1, {name:'bijoy',age:28}));

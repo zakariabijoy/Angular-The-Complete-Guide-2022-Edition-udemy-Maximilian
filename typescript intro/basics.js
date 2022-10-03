@@ -125,3 +125,7 @@ console.log(response1); // {data: "test",status: 200, type: 0}
 // Tuples -----------------------------------------------
 var a = [3, 'hello', { p: 3 }];
 var b = [4, 'world', { t: 1 }]; // tuples
+//Function signature ----------------------------------------
+var userDetails;
+userDetails = function (id, userInfo) { return console.log(userInfo); };
+console.log(userDetails(1, { name: 'bijoy', age: 28 }));

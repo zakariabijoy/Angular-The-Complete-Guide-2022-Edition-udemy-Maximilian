@@ -146,6 +146,12 @@ max ={
 class Instructor implements Human{
     firstName: string;
     age: number;
+
+    constructor(firstName:string, age:number) {
+        this.firstName = firstName;
+        this.age = age;
+    }
+
     great(): void {
         console.log("hello students");
     }

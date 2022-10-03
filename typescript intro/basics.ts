@@ -65,3 +65,13 @@ let bmw:Car = {
 }
 
 let cars : Car[];
+
+//function & types ----------------------------------------------------
+
+function add(a:number, b:number):number{
+    return a+b;
+}
+
+function printOutput(value:any):void{
+    console.log(value);
+}

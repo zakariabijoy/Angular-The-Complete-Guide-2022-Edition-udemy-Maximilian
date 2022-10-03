@@ -32,3 +32,10 @@ var bmw = {
     modelYear: 2022
 };
 var cars;
+//function & types ----------------------------------------------------
+function add(a, b) {
+    return a + b;
+}
+function printOutput(value) {
+    console.log(value);
+}
